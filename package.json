@@ -1,0 +1,29 @@
+{
+  "name": "hozvik-cloud",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@tabler/icons-react": "^3.34.0",
+    "@vercel/analytics": "^1.5.0",
+    "clsx": "^2.1.1",
+    "motion": "^12.18.1",
+    "next": "15.3.8",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.3",
+    "tailwindcss": "^4"
+  }
+}
