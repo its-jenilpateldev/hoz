@@ -24,7 +24,7 @@ const channels = [
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen pt-32 pb-24 px-6 flex flex-col items-center" style={{ background: "var(--bg)" }}>
+    <div className="min-h-screen pt-44 pb-24 px-6 flex flex-col items-center" style={{ background: "var(--bg)" }}>
       <PageHeader
         eyebrow="Get in touch"
         title="Contact us"

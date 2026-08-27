@@ -7,6 +7,11 @@ const nextConfig = {
         hostname: "wallpapercave.com",
         pathname: "/wp/**",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/**",
+      },
     ],
   },
 };

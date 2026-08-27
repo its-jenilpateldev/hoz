@@ -11,7 +11,7 @@ const terms = [
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen pt-32 pb-24 px-6" style={{ background: "var(--bg)" }}>
+    <div className="min-h-screen pt-44 pb-24 px-6" style={{ background: "var(--bg)" }}>
       <PageHeader
         eyebrow="Legal"
         title="Terms of Service"

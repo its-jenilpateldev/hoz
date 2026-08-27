@@ -1,176 +1,200 @@
+import Image from "next/image";
 import Link from "next/link";
-import { AiFillDiscord } from "react-icons/ai";
-import { MdSecurity, MdAccessTime, MdCloudQueue, MdSpeed, MdSupport, MdArrowForward } from "react-icons/md";
-import { IoStorefront } from "react-icons/io5";
+import { MdArrowForward } from "react-icons/md";
+import { FaMicrochip, FaBolt, FaCloud, FaRocket, FaGlobe } from "react-icons/fa6";
+import { BsDatabaseFill } from "react-icons/bs";
 
-const features = [
+const products = [
   {
-    title: "DDoS Protection",
-    description: "Layer 4 & 7 mitigation absorbs attacks before they reach your service, day or night.",
-    icon: MdSecurity,
+    name: "Xeon KVM Servers",
+    description: "Good and cheap KVM servers, perfect for websites and mail servers.",
+    price: "5.99",
+    icon: FaMicrochip,
+    popular: false,
   },
   {
-    title: "99.99% Uptime",
-    description: "Redundant infrastructure and real-time monitoring keep your workloads online.",
-    icon: MdAccessTime,
+    name: "Epyc KVM Server",
+    description: "Our Epyc KVM servers based on AMD EPYC processors.",
+    price: "4.95",
+    icon: BsDatabaseFill,
+    popular: true,
   },
   {
-    title: "Cloud Hosting",
-    description: "Scalable VPS and game server infrastructure that grows with your project.",
-    icon: MdCloudQueue,
+    name: "Ryzen KVM Server",
+    description: "The Ryzen KVM servers are a perfect choice for game servers of any kind.",
+    price: "2.45",
+    icon: FaBolt,
+    popular: false,
   },
   {
-    title: "Blazing Speed",
-    description: "Pure NVMe storage and tuned networking for consistently low latency.",
-    icon: MdSpeed,
+    name: "Sale Dedicated Servers",
+    description: "Perfect if you are looking for a budget-friendly dedicated server.",
+    price: "34.95",
+    icon: FaRocket,
+    popular: false,
   },
   {
-    title: "24/7 Support",
-    description: "A team that actually answers — reachable on Discord any hour of the day.",
-    icon: MdSupport,
+    name: "Intel Dedicated Servers",
+    description: "Our Intel Dedicated Servers based on Intel Xeon processors.",
+    price: "54.95",
+    icon: FaCloud,
+    popular: false,
   },
-];
-
-const stats = [
-  { value: "99.99%", label: "Uptime SLA" },
-  { value: "<10ms", label: "Network latency" },
-  { value: "24/7", label: "Human support" },
+  {
+    name: "Webspaces",
+    description: "Web hosting powered by AMD Ryzen, for perfect performance on your website.",
+    price: "2.95",
+    icon: FaGlobe,
+    popular: false,
+  },
 ];
 
 export default function Home() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-[92vh] flex items-center justify-center pt-24 pb-16 px-4">
-        {/* Ambient background */}
-        <div className="absolute inset-0 -z-10 bg-[var(--bg)]">
-          <div
-            className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full opacity-30 blur-[120px] animate-drift"
-            style={{
-              background:
-                "radial-gradient(circle, var(--violet) 0%, var(--violet-dim) 45%, transparent 70%)",
-            }}
-          />
-          <div
-            className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage:
-                "linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)",
-              backgroundSize: "48px 48px",
-            }}
-          />
-        </div>
+      <section className="relative overflow-hidden pt-40 pb-20 px-6 sm:px-10 lg:px-16" style={{ background: "var(--bg)" }}>
+        <div
+          className="absolute -top-20 -left-32 w-[500px] h-[500px] rounded-full opacity-25 blur-[120px] animate-drift"
+          style={{ background: "radial-gradient(circle, var(--violet) 0%, var(--violet-dim) 45%, transparent 70%)" }}
+        />
 
-        <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
-          <div
-            className="animate-fade-up inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-xs font-mono tracking-wide mb-8"
-            style={{ borderColor: "var(--border)", background: "var(--bg-elevated)", color: "var(--text-muted)" }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-[var(--ok)] animate-pulse" />
-            All systems operational
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center relative">
+          <div className="animate-fade-up">
+            <span
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-mono tracking-wide mb-6"
+              style={{ borderColor: "var(--border)", background: "var(--bg-elevated)", color: "var(--violet-bright)" }}
+            >
+              NEW &middot; 2026 Sale
+              <MdArrowForward />
+            </span>
+
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight" style={{ color: "var(--text)" }}>
+              Hozvik Cloud &mdash;<br />
+              Secure. Fast. Reliable.
+            </h1>
+
+            <p className="mt-6 text-base sm:text-lg leading-relaxed max-w-lg" style={{ color: "var(--text-muted)" }}>
+              From entry-level VPS to high-end enterprise: KVM &amp; dedicated
+              servers, game servers, web hosting and object storage — reliable
+              hardware and attentive support.
+            </p>
+
+            <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <Link
+                href="https://billing.hozvik.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-white transition-all duration-300 hover:brightness-110 hover:-translate-y-0.5"
+                style={{
+                  background: "linear-gradient(135deg, var(--violet) 0%, var(--violet-dim) 100%)",
+                  boxShadow: "0 8px 30px -8px rgba(109, 94, 248, 0.55)",
+                }}
+              >
+                Get started <MdArrowForward />
+              </Link>
+              <Link
+                href="#products"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5"
+                style={{ borderColor: "var(--border)", background: "var(--surface)", color: "var(--text)" }}
+              >
+                Explore products
+              </Link>
+            </div>
           </div>
 
-          <h1
-            className="animate-fade-up font-display text-5xl sm:text-6xl md:text-7xl font-semibold leading-[1.05] tracking-tight text-gradient"
-            style={{ "--delay": "0.08s" }}
-          >
-            Infrastructure that
-            <br />
-            doesn&apos;t flinch.
-          </h1>
-
-          <p
-            className="animate-fade-up mt-6 text-base sm:text-lg max-w-xl leading-relaxed"
-            style={{ color: "var(--text-muted)", "--delay": "0.16s" }}
-          >
-            Hozvik Cloud runs VPS, game servers, and Discord bots on hardware
-            built for uptime — with DDoS mitigation and NVMe storage as the
-            default, not the upsell.
-          </p>
-
-          <div
-            className="animate-fade-up mt-10 flex flex-col sm:flex-row items-center gap-4"
-            style={{ "--delay": "0.24s" }}
-          >
-            <Link
-              href="https://billing.hozvik.cloud"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-medium text-sm text-white transition-all duration-300 hover:brightness-110 hover:-translate-y-0.5"
-              style={{
-                background: "linear-gradient(135deg, var(--violet) 0%, var(--violet-dim) 100%)",
-                boxShadow: "0 8px 30px -8px rgba(109, 94, 248, 0.55)",
-              }}
+          <div className="animate-fade-up relative rounded-2xl overflow-hidden border" style={{ "--delay": "0.15s", borderColor: "var(--border)" }}>
+            <Image
+              src="https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?fm=jpg&q=80&w=1600&auto=format&fit=crop"
+              alt="Hozvik Cloud data center rack"
+              width={1600}
+              height={1067}
+              priority
+              className="w-full h-[340px] sm:h-[420px] lg:h-[480px] object-cover"
+            />
+            <div
+              className="absolute bottom-0 left-0 right-0 px-4 py-3 flex items-center gap-2 text-xs font-medium"
+              style={{ background: "rgba(8,8,13,0.7)", backdropFilter: "blur(6px)", color: "var(--text)" }}
             >
-              <IoStorefront className="text-lg" />
-              View plans
-              <MdArrowForward className="transition-transform duration-300 group-hover:translate-x-0.5" />
-            </Link>
-
-            <Link
-              href="https://discord.gg/hozvik"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl border text-sm font-medium transition-all duration-300 hover:-translate-y-0.5"
-              style={{ borderColor: "var(--border)", background: "var(--surface)", color: "var(--text)" }}
-            >
-              <AiFillDiscord className="text-xl" style={{ color: "#5865F2" }} />
-              discord.gg/hozvik
-            </Link>
-          </div>
-
-          {/* Stats strip */}
-          <div
-            className="animate-fade-up mt-16 grid grid-cols-3 gap-6 sm:gap-12 w-full max-w-lg"
-            style={{ "--delay": "0.32s" }}
-          >
-            {stats.map((stat) => (
-              <div key={stat.label} className="flex flex-col items-center">
-                <span className="font-display font-semibold text-2xl sm:text-3xl" style={{ color: "var(--text)" }}>
-                  {stat.value}
-                </span>
-                <span className="text-xs mt-1 tracking-wide" style={{ color: "var(--text-faint)" }}>
-                  {stat.label}
-                </span>
-              </div>
-            ))}
+              <span className="w-2 h-2 rounded-full bg-[var(--ok)]" />
+              Our data center &mdash; live and monitored
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="relative py-24 px-4 sm:px-8" style={{ background: "var(--bg-elevated)" }}>
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="font-mono text-xs tracking-[0.2em] uppercase" style={{ color: "var(--violet-bright)" }}>
-              Built for reliability
+      {/* Products Section */}
+      <section id="products" className="relative py-24 px-6 sm:px-10 lg:px-16" style={{ background: "var(--bg-elevated)" }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-4">
+            <span className="font-display text-6xl sm:text-7xl font-bold" style={{ color: "var(--violet)" }}>
+              01
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-semibold mt-3" style={{ color: "var(--text)" }}>
-              Everything runs on the same foundation
-            </h2>
           </div>
+          <span className="font-mono text-xs tracking-[0.2em] uppercase" style={{ color: "var(--violet-bright)" }}>
+            Our products
+          </span>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold mt-3 mb-3" style={{ color: "var(--text)" }}>
+            Everything you need to go live
+          </h2>
+          <p className="text-sm sm:text-base max-w-xl mb-14" style={{ color: "var(--text-muted)" }}>
+            Hozvik Cloud offers a wide range of products — here you&apos;ll find a small selection.
+          </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {features.map((feature) => {
-              const Icon = feature.icon;
+            {products.map((product) => {
+              const Icon = product.icon;
               return (
                 <div
-                  key={feature.title}
-                  className="glow-card rounded-2xl p-7 border transition-all duration-300 hover:-translate-y-1"
-                  style={{ background: "var(--surface)", borderColor: "var(--border)" }}
+                  key={product.name}
+                  className="glow-card relative rounded-2xl p-7 border transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                  style={{
+                    background: "var(--surface)",
+                    borderColor: product.popular ? "var(--violet-bright)" : "var(--border)",
+                  }}
                 >
+                  {product.popular && (
+                    <span
+                      className="absolute top-4 right-4 text-[10px] font-bold px-2.5 py-1 rounded-md tracking-wide"
+                      style={{ background: "var(--violet-bright)", color: "#08080d" }}
+                    >
+                      POPULAR
+                    </span>
+                  )}
+
                   <div
                     className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
                     style={{ background: "var(--bg-elevated)", border: "1px solid var(--border)" }}
                   >
-                    <Icon className="text-xl" style={{ color: "var(--violet-bright)" }} />
+                    <Icon className="text-lg" style={{ color: "var(--violet-bright)" }} />
                   </div>
+
                   <h3 className="font-display text-lg font-semibold mb-2" style={{ color: "var(--text)" }}>
-                    {feature.title}
+                    {product.name}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                    {feature.description}
+                  <p className="text-sm leading-relaxed mb-6 flex-1" style={{ color: "var(--text-muted)" }}>
+                    {product.description}
                   </p>
+
+                  <div className="flex items-end justify-between pt-5 border-t" style={{ borderColor: "var(--border)" }}>
+                    <div>
+                      <span className="font-display text-2xl font-semibold" style={{ color: "var(--text)" }}>
+                        {product.price}&euro;
+                      </span>
+                      <span className="text-xs ml-1.5" style={{ color: "var(--text-faint)" }}>
+                        Monthly
+                      </span>
+                    </div>
+                    <Link
+                      href="https://billing.hozvik.in"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-sm font-medium transition-colors duration-200"
+                      style={{ color: "var(--violet-bright)" }}
+                    >
+                      Learn more <MdArrowForward />
+                    </Link>
+                  </div>
                 </div>
               );
             })}

@@ -15,7 +15,7 @@ const hostingRules = [
 
 export default function HostingRulesPage() {
   return (
-    <div className="min-h-screen pt-32 pb-24 px-6" style={{ background: "var(--bg)" }}>
+    <div className="min-h-screen pt-44 pb-24 px-6" style={{ background: "var(--bg)" }}>
       <PageHeader
         eyebrow="Acceptable use"
         title="Hosting Rules"
