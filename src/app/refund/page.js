@@ -1,16 +1,43 @@
-export default function RefundPolicyPage() {
+import PageHeader from "@/components/PageHeader";
+
+const refundPoints = [
+  "Refunds are only considered within 24 hours of purchase, and only if the service has not been substantially used.",
+  "Custom or promotional plans, dedicated servers, and domain purchases are non-refundable.",
+  "Refund requests must be submitted through a support ticket with your order details.",
+  "Chargebacks filed without contacting support first will result in immediate account termination.",
+  "Approved refunds are processed to the original payment method within 5–7 business days.",
+  "Hozvik Cloud reserves the right to deny refunds in cases of suspected abuse or Terms of Service violations.",
+];
+
+export default function RefundPage() {
   return (
-    <div className="min-h-screen bg-neutral-950 text-white p-8 pt-28">
-      <h1 className="text-4xl font-extrabold mb-6 text-blue-400 border-b border-white/10 pb-2">Refund Policy</h1>
-      <p className="text-gray-300 text-lg leading-relaxed">
-        At Hozvik Cloud, we strive for customer satisfaction. Please read our refund terms carefully:
-      </p>
-      <ul className="list-disc list-inside mt-4 space-y-3 text-gray-400 text-md">
-        <li>Refunds are only considered for technical issues reported within 24 hours of purchase.</li>
-        <li>Refund requests must include detailed explanation and proof of the issue.</li>
-        <li>We reserve the right to decline any refund request that does not meet our criteria.</li>
-        <li>Chargebacks will result in immediate service termination and blacklist from future use.</li>
-      </ul>
+    <div className="min-h-screen pt-32 pb-24 px-6" style={{ background: "var(--bg)" }}>
+      <PageHeader
+        eyebrow="Legal"
+        title="Refund Policy"
+        description="Our approach to cancellations and refunds — please read before purchasing."
+      />
+
+      <div
+        className="max-w-3xl mx-auto rounded-2xl border p-8 sm:p-10"
+        style={{ background: "var(--surface)", borderColor: "var(--border)" }}
+      >
+        <ol className="flex flex-col gap-5">
+          {refundPoints.map((point, index) => (
+            <li key={index} className="flex gap-4">
+              <span
+                className="font-mono text-xs font-medium shrink-0 w-6 h-6 rounded-md flex items-center justify-center mt-0.5"
+                style={{ background: "var(--bg-elevated)", color: "var(--violet-bright)" }}
+              >
+                {index + 1}
+              </span>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
+                {point}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </div>
     </div>
   );
 }

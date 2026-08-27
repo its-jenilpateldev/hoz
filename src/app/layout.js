@@ -19,7 +19,7 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#ff5a00",
+  themeColor: "#08080d",
 };
 
 export default function RootLayout({ children }) {
@@ -33,7 +33,10 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
       </head>
-      <body className="h-screen w-full text-black bg-[#101010] overflow-x-hidden overflow-y-auto scrollbar-none">
+      <body
+        className="min-h-screen w-full overflow-x-hidden overflow-y-auto scrollbar-none"
+        style={{ background: "var(--bg)", color: "var(--text)" }}
+      >
         <Navbar />
         {children}
         <Footer />
