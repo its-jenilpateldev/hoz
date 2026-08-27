@@ -19,7 +19,7 @@ export default function NotFound() {
         This page isn&apos;t hosted here.
       </h1>
       <p className="mt-3 max-w-md text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
-        The page you're looking for doesn't exist or has moved. Check the URL, or head back to the homepage.
+        The page you&apos;re looking for doesn&apos;t exist or has moved. Check the URL, or head back to the homepage.
       </p>
 
       <Link
